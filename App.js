@@ -7,14 +7,16 @@ export default function App() {
     <View style={styles.container}>
       <Text>Welcome to my simple counter</Text>
       <Text>counter {counter}</Text>
-      <Button title="+" onPress={() => setCounter(counter + 1)} />
-      <Button
-        title="-"
-        onPress={() => {
-          setCounter(counter - 1);
-        }}
-      />
-      <Button title="reset" onPress={() => setCounter(0)} />
+      <View style={styles.buttons}>
+        <Button title="+" onPress={() => setCounter(counter + 1)} />
+        <Button
+          title="-"
+          onPress={() => {
+            setCounter(counter - 1);
+          }}
+        />
+        <Button title="reset" onPress={() => setCounter(0)} />
+      </View>
     </View>
   );
 }
@@ -25,5 +27,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 12,
   },
 });
